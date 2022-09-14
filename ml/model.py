@@ -8,32 +8,32 @@ from sklearn.model_selection import cross_val_score
 from sklearn.ensemble import RandomForestClassifier
 from ml.data import process_data
 from joblib import dump
+from typing import Union
 
 
-
-
-
-def save_dump(variable, path, response):
+def save_dump(variable,
+              path : str,
+              response : str):
     """Save a variable into a joblib file
     
     Inputs:
     -------
     variable:
         Variable to be saved
-    path:
-        (str) Path to save the variable
-    response:
-        (str) Filename
+    path: str
+          Path to save the variable
+    response: str
+              Filename
     
     Output:
     -------
-        NONE
+        None
     """
     dump(variable, f"{path}/model/{response}.joblib")
 
 
-# Optional: implement hyperparameter tuning.
-def train_model(X_train, y_train):
+def train_model(X_train: Union[np.array, pd.DataFrame],
+                y_train: Union[np.array, pd.Series]):
     """
     Trains a machine learning model and returns it.
 

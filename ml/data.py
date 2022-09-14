@@ -1,6 +1,9 @@
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+from typing import Union, TypeAlias, List, Tuple
+
+lista_string : TypeAlias = List[str]
 
 
 def remove_dash(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
@@ -34,12 +37,14 @@ def clean_spaces(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
     return frame_copy
 
 
-
 def process_data(
-    X, categorical_features=[], 
-    label=None, training=True, 
-    encoder=None, lb=None
-    ):
+    X: Union[pd.DataFrame, np.array],
+    categorical_features : Union [lista_string, list] = [], 
+    label : str = None,
+    training : bool = True, 
+    encoder: OneHotEncoder = None,
+    lb : LabelBinarizer = None
+    ) -> Tuple[np.array, np.array, OneHotEncoder, LabelBinarizer]:
     
     """ Process the data used in the machine learning pipeline.
 

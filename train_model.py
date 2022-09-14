@@ -34,7 +34,7 @@ def model_preprocessing():
     return X_train, y_train, encoder, lb
 
 
-def train_model(path):
+def train_model_implementation(path):
     
     X_train, y_train, encoder, lb = model_preprocessing()
 
