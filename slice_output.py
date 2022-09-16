@@ -1,7 +1,6 @@
 from ml.model_ import *
 from ml.data import *
 from ml.constants import *
-#import argparse
 from joblib import load
 
 def main(data_path):
@@ -18,9 +17,5 @@ def main(data_path):
 
 
 if __name__ == '__main__':
-
-    #parser = argparse.ArgumentParser(description= 'Test Path')
-    #parser.add_argument('--test_data_path', type=str, help = 'Fist number', required = True)
-    #args = parser.parse_args()
 
     main(data_path = './data/test_census_data.csv')
