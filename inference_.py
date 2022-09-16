@@ -1,8 +1,8 @@
 from json import load
-from ml.model import inference
+from ml.model_ import inference
 from ml.data import *
 from joblib import load
-from constants import *
+from ml.constants import *
 
 def run_inference(data):
 
@@ -11,7 +11,7 @@ def run_inference(data):
     lb      = load(f"{MODEL_PATH}/lb.joblib")
 
     X_data, y_data, _, _ = process_data(data,
-                                categorical_features = CATEGORICAL_FEATURES,
+                                categorical_features = PROCESSED_CAT_FEATURES,
                                 lb = lb,
                                 encoder = encoder)
     predictions = inference(model, X_data)                

@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  train_model:
+    cmd: python ./train.py
+    deps:
+    - path: ./data/census.csv
+      md5: 145de00f6e6053d3f7044628f9a5b5ff
+      size: 3974474
+    - path: train.py
+      md5: 01fd6dfbdf5eafde268413d26538c720
+      size: 183
+    outs:
+    - path: ./data/test_census_data.csv
+      md5: 8a5d078553cd1211c907fdc5e3f98e9b
+      size: 659007
+    - path: ./data/train_census_data.csv
+      md5: 0cffa9adb67797a0ef1ad6fa6462ea34
+      size: 2636661
+  test_model:
+    cmd: python ./slice_output.py
+    deps:
+    - path: ./data/test_census_data.csv
+      md5: 8a5d078553cd1211c907fdc5e3f98e9b
+      size: 659007
+    - path: slice_output.py
+      md5: 910124fc793bb523a5e035786780ed56
+      size: 696
+    outs:
+    - path: ./ml/model/sliced_output.txt
+      md5: 162a19caacd5adb2021d48e7d781d178
+      size: 19864

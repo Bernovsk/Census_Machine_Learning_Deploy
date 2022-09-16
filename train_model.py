@@ -1,46 +1,38 @@
-# Script to train machine learning model.
-from ast import Constant
-import pandas as pd
-import constants
-from ml.data import process_data, remove_dash, clean_spaces
-from ml.model import *
-from sklearn.model_selection import train_test_split
+from ml.model_ import *
+from ml.constants import *
+from ml.data import data_preprocessing, train_test_data
+from typing import Union
 
 
-def load_data(path:str) -> pd.DataFrame:
-    frame = pd.read_csv(path, sep = ';')
-    return frame
+import logging
+from datetime import datetime
 
 
-def data_preprocessing():
-    data = load_data(path=constants.DATA_PATH)
+logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
+logger = logging.getLogger()
 
-    frame = data.copy()
+def model_preprocessing(data_path: Union[str, None] = None):
+    logging.info("Preprocessing the Data for the model")
+    preprocessed_data = data_preprocessing(data_path = data_path)
 
-    for coluna in frame.select_dtypes('object').columns.tolist():
-        frame = remove_dash(frame = frame, col_name = coluna)
-        frame = clean_spaces(frame = frame, col_name = coluna)
-    
-    frame.to_csv(f"{Constant.DATA_PATH}/pre_processing_census_data.csv")
-    train_frame, test_frame = train_test_split(frame, test_size = 0.20, random_state = 42)
-    return train_frame, test_frame
+    logging.info("Spliting the data into train test")
+    train_frame, test_frame = train_test_data(preprocessed_data, save = True)
 
-
-def model_preprocessing():
-    train_frame, _ = data_preprocessing()
+    logging.info("Processing the categorical and continuous data")
     X_train, y_train, encoder, lb = process_data(
-        train_frame, categorical_features=constants.CATEGORICAL_FEATURES, label="salary", training=True
-    )
+        train_frame, categorical_features = PROCESSED_CAT_FEATURES, label="salary", training=True)
     return X_train, y_train, encoder, lb
 
 
-def train_model_implementation(path):
-    
-    X_train, y_train, encoder, lb = model_preprocessing()
 
+def train_model_implementation(data_path: Union[str, None] = None):
+    
+    X_train, y_train, encoder, lb = model_preprocessing(data_path = data_path)
+    logging.info("Training the model")
     model = train_model(X_train, y_train)
 
-    save_dump(model, constants.MODEL_PATH, "model")
-    save_dump(encoder, constants.MODEL_PATH, "encoder")
-    save_dump(lb, constants.MODEL_PATH, "lb")
+    logging.info("Saving the model")
+    save_dump(model, MODEL_PATH, "model")
+    save_dump(encoder, MODEL_PATH, "encoder")
+    save_dump(lb, MODEL_PATH, "lb")
     return model

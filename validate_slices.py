@@ -1,6 +1,5 @@
-from json import encoder
-from ml.model import *
-from constants import *
+from ml.model_ import *
+from ml.constants import *
 from joblib import load
 
 def run_slice_check(data_file:pd.DataFrame) -> None:
@@ -11,7 +10,7 @@ def run_slice_check(data_file:pd.DataFrame) -> None:
 
 
     X_data, y_data, _, _ = process_data(data_file,
-                    categorical_features = CATEGORICAL_FEATURES,
+                    categorical_features = PROCESSED_CAT_FEATURES,
                     lb = lb,
                     encoder = encoder)
                     

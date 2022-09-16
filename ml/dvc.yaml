@@ -1,0 +1,3 @@
+stages:
+  validade_slices:
+    cmd: python ./__init__.py

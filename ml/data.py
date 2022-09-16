@@ -1,9 +1,18 @@
 import numpy as np
 import pandas as pd
-from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
-from typing import Union, TypeAlias, List, Tuple
+from typing import Union, List, Tuple
+from ml.constants import *
 
-lista_string : TypeAlias = List[str]
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+
+
+
+def load_data(path:str) -> pd.DataFrame:
+    frame = pd.read_csv(path, sep = ',')
+    frame_copy = frame.copy()
+    frame_copy.columns = [col.strip().replace('-', '_') for col in frame_copy.columns]
+    return frame_copy
 
 
 def remove_dash(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
@@ -18,6 +27,7 @@ def remove_dash(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
     """
     frame_copy = frame.copy()
     frame_copy[col_name] = frame_copy[col_name].str.replace('-', '_')
+
     return frame_copy
 
 
@@ -36,10 +46,63 @@ def clean_spaces(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
     frame_copy[col_name] = frame_copy[col_name].apply(lambda x: str(x).strip())
     return frame_copy
 
+def remove_unwanted(frame:pd.DataFrame, char:str = '?'):
+    """
+    Remove invalid values
+
+    Input:
+        frame: (pd.DataFrame)
+        char: (str)
+         String to removed
+    Ouput:
+        frame_copy: (pd.DataFrame)
+         replaced frame
+    """
+
+    base_frame = frame.copy()
+    for column in base_frame.columns.tolist():
+        if column in base_frame.select_dtypes('object').columns.tolist():
+            base_frame = base_frame.loc[base_frame[column] != char]
+
+    base_frame.drop_duplicates(inplace = True)
+    
+    return base_frame
+
+def data_preprocessing(data_path: Union[str, None] = None):
+
+    if data_path == None:
+        data = load_data(path= DATA_PATH + "census.csv")
+
+    else:
+        data = load_data(path=data_path)
+    print('Checkpoint')
+    frame = data.copy()
+
+    for coluna in frame.columns.tolist():
+        if coluna in frame.select_dtypes('object').columns.tolist():
+            frame = clean_spaces(frame = frame, col_name = coluna)
+            frame = remove_dash(frame = frame, col_name = coluna)
+        clean_frame = remove_unwanted(frame)
+    clean_frame.to_csv(f"{DATA_PATH}pre_processing_census_data.csv", index = False)
+    return clean_frame
+
+
+def train_test_data(clean_frame:pd.DataFrame, save : Union[bool, None]= False):
+
+    clean_frame.to_csv(f"{DATA_PATH}pre_processing_census_data.csv", index = False)
+    train_frame, test_frame = train_test_split(clean_frame, test_size = 0.20, random_state = 42)
+    
+    if save:
+        train_frame.to_csv(f"{DATA_PATH}train_census_data.csv", index = False)
+        test_frame.to_csv(f"{DATA_PATH}test_census_data.csv", index = False)
+        
+    return train_frame, test_frame
+
+
 
 def process_data(
     X: Union[pd.DataFrame, np.array],
-    categorical_features : Union [lista_string, list] = [], 
+    categorical_features : Union [List[str], list] = [], 
     label : str = None,
     training : bool = True, 
     encoder: OneHotEncoder = None,
@@ -105,6 +168,7 @@ def process_data(
             y = lb.transform(y.values).ravel()
         # Catch the case where y is None because we're doing inference.
         except AttributeError:
+            print('y is none')
             pass
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)

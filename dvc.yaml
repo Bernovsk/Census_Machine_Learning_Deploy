@@ -1,0 +1,16 @@
+stages:
+  train_model:
+    cmd: python ./train.py
+    deps:
+    - ./data/census.csv
+    - train.py
+    outs:
+    - ./data/test_census_data.csv
+    - ./data/train_census_data.csv
+  test_model:
+    cmd: python ./slice_output.py
+    deps:
+    - ./data/test_census_data.csv
+    - slice_output.py
+    outs:
+    - ./ml/model/sliced_output.txt
