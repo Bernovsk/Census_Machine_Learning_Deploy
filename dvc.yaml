@@ -11,6 +11,4 @@ stages:
     cmd: python ./slice_output.py
     deps:
     - ./data/test_census_data.csv
-    - slice_output.py
-    outs:
     - ./ml/model/sliced_output.txt

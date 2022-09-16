@@ -1,4 +1,0 @@
-schema: '2.0'
-stages:
-  validade_slices:
-    cmd: python ./__init__.py

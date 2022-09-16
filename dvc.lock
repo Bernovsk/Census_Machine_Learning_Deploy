@@ -22,10 +22,6 @@ stages:
     - path: ./data/test_census_data.csv
       md5: 8a5d078553cd1211c907fdc5e3f98e9b
       size: 659007
-    - path: slice_output.py
-      md5: 910124fc793bb523a5e035786780ed56
-      size: 696
-    outs:
     - path: ./ml/model/sliced_output.txt
-      md5: 162a19caacd5adb2021d48e7d781d178
-      size: 19864
+      md5: a0e1017b5077929361de0f5f3b2b3366
+      size: 19862
