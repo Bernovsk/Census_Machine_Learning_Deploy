@@ -1,11 +1,14 @@
 import numpy as np
 import pandas as pd
+import logging
 from typing import Union, List, Tuple
 from ml.constants import *
 
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
+logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
+logger = logging.getLogger()
 
 
 def load_data(path:str) -> pd.DataFrame:
@@ -68,22 +71,30 @@ def remove_unwanted(frame:pd.DataFrame, char:str = '?'):
     
     return base_frame
 
-def data_preprocessing(data_path: Union[str, None] = None):
+def data_read(data: Union[str,pd.DataFrame]):
+    logging.info(f"Received data type {type(data)}")
+    if type(data) == str:
+        frame = load_data(path = data).copy()
+    elif type(data) == pd.DataFrame:
+        frame = data.copy()
+    logging.info(f"Returning a pd.Dataframe")    
+    return frame
 
-    if data_path == None:
-        data = load_data(path= DATA_PATH + "census.csv")
 
+def data_preprocessing(data: Union[str, None, pd.DataFrame] = None):
+    
+    if type(data) == None:
+        logging.info(f"The input data is Null, so we use the base census frame")
+        frame = load_data(path= DATA_PATH + "census.csv").copy()
     else:
-        data = load_data(path=data_path)
-    print('Checkpoint')
-    frame = data.copy()
-
+        frame = data_read(data = data)
+    logging.info(f"Check the frame type : {type(frame)}")
     for coluna in frame.columns.tolist():
         if coluna in frame.select_dtypes('object').columns.tolist():
             frame = clean_spaces(frame = frame, col_name = coluna)
             frame = remove_dash(frame = frame, col_name = coluna)
         clean_frame = remove_unwanted(frame)
-    clean_frame.to_csv(f"{DATA_PATH}pre_processing_census_data.csv", index = False)
+
     return clean_frame
 
 
@@ -103,7 +114,7 @@ def train_test_data(clean_frame:pd.DataFrame, save : Union[bool, None]= False):
 def process_data(
     X: Union[pd.DataFrame, np.array],
     categorical_features : Union [List[str], list] = [], 
-    label : str = None,
+    label : Union[str, None] = None,
     training : bool = True, 
     encoder: OneHotEncoder = None,
     lb : LabelBinarizer = None

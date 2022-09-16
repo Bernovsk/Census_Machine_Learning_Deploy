@@ -1,0 +1,16 @@
+{
+     "age": 50,
+    "workclass": "Private",
+    "fnlgt": 210008,
+    "education": "HS_grad",
+    "education_num": 9,
+    "marital_status": "Never_married",
+    "occupation": "Sales",
+    "relationship": "Own_child",
+    "race": "White",
+    "sex": "Female",
+    "capital_gain": 0,
+    "capital_loss": 0,
+    "hours_per_week": 40,
+    "native_country": "United_States"
+  }
