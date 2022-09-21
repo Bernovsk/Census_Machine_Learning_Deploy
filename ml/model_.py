@@ -153,7 +153,7 @@ def slice_performance(model,
 
 
 def check_slices(model,test_data, encoder, lb):
-
+    
     with open(f"./ml/model/sliced_output.txt", 'w') as output_file:
         for category in PROCESSED_CAT_FEATURES:
             for value in test_data[category].unique().tolist():
