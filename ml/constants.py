@@ -1,3 +1,10 @@
+"""
+Used Constants in the model pipeline
+
+Author: Bernardo C.
+Date: 2022/09/22
+
+"""
 DATA_PATH = './data/'
 
 MODEL_PATH = "./ml/model/"
@@ -25,4 +32,3 @@ PROCESSED_CAT_FEATURES = [
     "sex",
     "native_country",
 ]
-
