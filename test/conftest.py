@@ -1,5 +1,5 @@
 import pytest
-from fastapi import TestClient
+from fastapi.testclient import TestClient
 from main import app
 
 @pytest.fixture
