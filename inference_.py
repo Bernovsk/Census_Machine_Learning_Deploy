@@ -37,3 +37,6 @@ def run_inference(data):
     original_output = lb_model.inverse_transform(predictions, threshold=None)
     print(original_output[0])
     return original_output[0]
+
+
+

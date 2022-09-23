@@ -1,24 +1,43 @@
-import numpy as np
-import pandas as pd
+"""
+Module for preprocessing and processing
+the data for the ingestion of the model
+
+Author: Bernarod C.
+Date: 2022/09/22
+"""
 import logging
 from typing import Union, List, Tuple
-from ml.constants import *
-
+import numpy as np
+import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
+from ml.constants import DATA_PATH
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
 
-def load_data(path:str) -> pd.DataFrame:
-    frame = pd.read_csv(path, sep = ',')
+def load_data(path: str) -> pd.DataFrame:
+    """
+    Load the data from a data path
+
+    Input:
+    ------
+        path:(str)
+            path of the data
+    Output:
+    -------
+        frame_copy: (pd.DataFrame)
+            read data
+    """
+    frame = pd.read_csv(path, sep=',')
     frame_copy = frame.copy()
-    frame_copy.columns = [col.strip().replace('-', '_') for col in frame_copy.columns]
+    frame_copy.columns = [col.strip().replace('-', '_')
+                          for col in frame_copy.columns]
     return frame_copy
 
 
-def remove_dash(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
+def remove_dash(frame: pd.DataFrame, col_name: str) -> pd.DataFrame:
     """
     Remove the '-' char from any text column
 
@@ -34,7 +53,7 @@ def remove_dash(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
     return frame_copy
 
 
-def clean_spaces(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
+def clean_spaces(frame: pd.DataFrame, col_name: str) -> pd.DataFrame:
     """
     Remove empty spaces from strings
 
@@ -44,12 +63,13 @@ def clean_spaces(frame:pd.DataFrame, col_name:str) -> pd.DataFrame:
     Ouput:
         frame_copy: (pd.DataFrame) replaced frame
     """
-    
+
     frame_copy = frame.copy()
     frame_copy[col_name] = frame_copy[col_name].apply(lambda x: str(x).strip())
     return frame_copy
 
-def remove_unwanted(frame:pd.DataFrame, char:str = '?'):
+
+def remove_unwanted(frame: pd.DataFrame, char: str = '?'):
     """
     Remove invalid values
 
@@ -67,48 +87,91 @@ def remove_unwanted(frame:pd.DataFrame, char:str = '?'):
         if column in base_frame.select_dtypes('object').columns.tolist():
             base_frame = base_frame.loc[base_frame[column] != char]
 
-    base_frame.drop_duplicates(inplace = True)
-    
+    base_frame.drop_duplicates(inplace=True)
+
     return base_frame
 
-def data_read(data: Union[str,pd.DataFrame]):
-    logging.info(f"Received data type {type(data)}")
-    if type(data) == str:
-        frame = load_data(path = data).copy()
-    elif type(data) == pd.DataFrame:
+
+def data_read(data: Union[str, pd.DataFrame]):
+    """
+    Check if the data is an pd.DataFrame or an string
+    in case of be a string it read the file correspondent
+    file path
+
+    Input:
+    ------
+        data: (str or pd.DataFrame)
+    Output:
+    ------
+        frame: (pd.DataFrame)
+    """
+    logging.info("Received data type %s", type(data))
+    if isinstance(data, str):
+        frame = load_data(path=data).copy()
+    elif isinstance(data, pd.DataFrame):
         frame = data.copy()
-    logging.info(f"Returning a pd.Dataframe")    
+    logging.info("Returning a pd.Dataframe")
     return frame
 
 
 def data_preprocessing(data: Union[str, None, pd.DataFrame] = None):
-    
-    if type(data) == None:
-        logging.info(f"The input data is Null, so we use the base census frame")
-        frame = load_data(path= DATA_PATH + "census.csv").copy()
+    """
+    Unify the basic preprocessing function,
+    and returns a preprocessed pandas DataFrame
+
+    Input:
+    ------
+        data: (str or pd.DataFrame)
+    Output:
+    ------
+        clean_frame: (pd.DataFrame)
+    """
+    if isinstance(data, type(None)):
+        logging.info(
+            "The input data is Null, so we use the base census frame")
+        frame = load_data(path=DATA_PATH + "census.csv").copy()
     else:
-        frame = data_read(data = data)
-    logging.info(f"Check the frame type : {type(frame)}")
+        frame = data_read(data=data)
+    logging.info("Check the frame type : %s", type(frame))
     for coluna in frame.columns.tolist():
         if coluna in frame.select_dtypes('object').columns.tolist():
-            frame = clean_spaces(frame = frame, col_name = coluna)
-            frame = remove_dash(frame = frame, col_name = coluna)
+            frame = clean_spaces(frame=frame, col_name=coluna)
+            frame = remove_dash(frame=frame, col_name=coluna)
         clean_frame = remove_unwanted(frame)
 
     return clean_frame
 
 
-def train_test_data(clean_frame:pd.DataFrame, save : Union[bool, None]= False):
+def train_test_data(clean_frame: pd.DataFrame,
+                    save: Union[bool, None] = False):
+    """
+    Function that split the data into 0.8 and 0.2 and saves if save = True
 
-    clean_frame.to_csv(f"{DATA_PATH}pre_processing_census_data.csv", index = False)
-    train_frame, test_frame = train_test_split(clean_frame, test_size = 0.20, random_state = 42)
-    
+    Input:
+    ------
+        clean_frame:(pd.DataFrame)
+            Data after the preprocessing step
+        save:(bool)
+            save the frames into the data folder if TRUE
+    Output:
+    ------
+        train_frame: (pd.Dataframe)
+            Data that contains 80% of the original number of rows of the original frame
+        test_frame: (pd.Dataframe)
+            Data that contains 20% of the original number of rows of the original frame
+    """
+
+    clean_frame.to_csv(
+        f"{DATA_PATH}pre_processing_census_data.csv",
+        index=False)
+    train_frame, test_frame = train_test_split(
+        clean_frame, test_size=0.20, random_state=42)
+
     if save:
-        train_frame.to_csv(f"{DATA_PATH}train_census_data.csv", index = False)
-        test_frame.to_csv(f"{DATA_PATH}test_census_data.csv", index = False)
-        
-    return train_frame, test_frame
+        train_frame.to_csv(f"{DATA_PATH}train_census_data.csv", index=False)
+        test_frame.to_csv(f"{DATA_PATH}test_census_data.csv", index=False)
 
+    return train_frame, test_frame
 
 
 def process_data(
@@ -121,14 +184,11 @@ def process_data(
     ) -> Tuple[np.array, np.array, OneHotEncoder, LabelBinarizer]:
     
     """ Process the data used in the machine learning pipeline.
-
     Processes the data using one hot encoding for the categorical features and a
     label binarizer for the labels. This can be used in either training or
     inference/validation.
-
     Note: depending on the type of model used, you may want to add in functionality that
     scales the continuous data.
-
     Inputs
     ------
     X : pd.DataFrame
@@ -144,7 +204,6 @@ def process_data(
         Trained sklearn OneHotEncoder, only used if training=False.
     lb : sklearn.preprocessing._label.LabelBinarizer
         Trained sklearn LabelBinarizer, only used if training=False.
-
     Returns
     -------
     X : np.array

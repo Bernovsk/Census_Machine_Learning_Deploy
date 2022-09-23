@@ -30,8 +30,8 @@ def main(data_path):
     check_slices(
         model=model,
         test_data=test_data,
-        encoder=encoder_model,
-        lb=lb_model)
+        encoder_model=encoder_model,
+        lb_model=lb_model)
 
 
 if __name__ == '__main__':
