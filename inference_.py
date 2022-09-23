@@ -21,9 +21,9 @@ def run_inference(data):
         (Str)
             Prediction of the model
     """
-    model = jb.load("./ml/model/model.joblib")
+    model         = jb.load("./ml/model/model.joblib")
     encoder_model = jb.load("./ml/model/encoder.joblib")
-    lb_model = jb.load("./ml/model/lb.joblib")
+    lb_model      = jb.load("./ml/model/lb.joblib")
 
     clean_data = data_preprocessing(data=data)
 
