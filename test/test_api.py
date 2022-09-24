@@ -1,5 +1,6 @@
 import json
 
+
 def test_get_method(client):
     """
     Test the get method of the API
@@ -7,7 +8,7 @@ def test_get_method(client):
     r = client.get('/')
     print(r)
     assert r.status_code == 200
-    assert r.json()== {"message": "Welcome to the model FastAPI homepage"}
+    assert r.json() == {"message": "Welcome to the model FastAPI homepage"}
 
 
 def test_post_lower(client):
@@ -31,16 +32,17 @@ def test_post_lower(client):
                                     "capital_loss": 0,
                                     "hours_per_week": 40,
                                     "native_country": "United_States"
-                                    }), 
+                                    }),
                     timeout=30)
     try:
         assert r.status_code == 200
-    except:
+    except AssertionError:
         print("Failed to post method {}".format(r.status_code))
     try:
         assert r.json() == {"Salary_prediction": "<=50K"}
-    except:
+    except AssertionError:
         print(r.json())
+
 
 def test_post_wrong(client):
     """
@@ -48,8 +50,8 @@ def test_post_wrong(client):
     """
 
     r = client.post('/',
-                   json=json.dumps({
-                                    "age": 50,
+                    json=json.dumps({
+                        "age": 50,
                                     "workc": "--",
                                     "fnlgt": 210008,
                                     "educatin": "HS_grad",
@@ -63,10 +65,11 @@ def test_post_wrong(client):
                                     "capital_loss": 0,
                                     "hours_per_week": 4,
                                     "native_cuntry": "United_Sttes"
-                                    }), 
+                                    }),
                     timeout=30)
 
     assert r.status_code == 422
+
 
 def test_post_higher(client):
     """
@@ -91,12 +94,12 @@ def test_post_higher(client):
                                     "native_country": "United_States"
                                     }),
                     timeout=30)
-    
+
     try:
         assert r.status_code == 200
-    except:
+    except AssertionError:
         print("Failed to post method {}".format(r.status_code))
     try:
-        assert r.json() == {"Salary_prediction":  ">50K"}
-    except:
+        assert r.json() == {"Salary_prediction": ">50K"}
+    except AssertionError:
         print(r.json())

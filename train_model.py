@@ -40,7 +40,10 @@ def model_preprocessing(data_path: Union[str, None] = None):
 
     logging.info("Processing the categorical and continuous data")
     train_data, target_data, encoder_model, lb_model = process_data(
-        train_frame, categorical_features=PROCESSED_CAT_FEATURES, label="salary", training=True)
+        train_frame,
+        categorical_features=PROCESSED_CAT_FEATURES,
+        label="salary",
+        training=True)
     return train_data, target_data, encoder_model, lb_model
 
 
@@ -56,7 +59,8 @@ def train_model_implementation(data_path: Union[str, None] = None):
         model:
             Trained Model
     """
-    train_data, target_data, encoder_model, lb_model = model_preprocessing(data_path)
+    train_data, target_data, encoder_model, lb_model = model_preprocessing(
+        data_path)
     logging.info("Training the model")
     model = train_model(train_data, target_data)
 

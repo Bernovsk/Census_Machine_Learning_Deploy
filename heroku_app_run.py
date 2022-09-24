@@ -6,16 +6,13 @@ Author: Bernardo C.
 Date: 2022/09/21
 """
 
-import json
-import requests
+from requests import post
 
-with json.load(open('./example/inference_test.json', encoding='UTF-8')) as data:
-    test_data = data
+with open('./example/inference_test.json', encoding='UTF-8') as test_data:
 
+    response = post('https://census-final-prediction-app.herokuapp.com/',
+                    data=test_data,
+                    timeout=30)
 
-response = requests.post('https://census-final-prediction-app.herokuapp.com/',
-                         data=json.dumps(test_data),
-                         timeout=30)
-
-print(f"Response status: {response.status_code}")
-print(f"Salary Prediction: {response.json()['Salary_prediction']}")
+    print(f"Response status: {response.status_code}")
+    print(f"Salary Prediction: {response.json()['Salary_prediction']}")
