@@ -5,7 +5,6 @@ Author: Bernardo Carvalho <br>
 Date: September 2022 <br>
 
 
-
 ## Project Description
 In this project, it is applied the skills to develop a classification model on publicly available Census Bureau data. Unit tests are created to monitor the model performance on various slices of the data. Then, the model is deployed using the FastAPI package and with API tests. Both the slice-validation and the API tests are incorporated into a CI/CD framework using GitHub Actions.
 
