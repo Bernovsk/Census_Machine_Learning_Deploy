@@ -1,24 +1,14 @@
-import logging
 import os
 from inference_ import run_inference
 from ml.data import train_test_data
 
 def test_preprocessing_data(load_clean_data):
     train_data, test_data = train_test_data(load_clean_data)
-    total_rows = train_data.shape[0] + test_data.shape[0] + 500
-    total_cols = train_data.shape[1] + 3
-    try:
-        logging.info('Test the parity between the number of rows before the train test split')    
-        assert total_rows == load_clean_data.shape[0]
-        logging.info('The number of rows was conserved')
-    except AssertionError:
-        logging.info('The number of rows was not conserverd')
-    try:
-        logging.info('Test the parity between the number of columns before the train test split')    
-        assert total_cols == load_clean_data.shape[1]
-        logging.error('The number of columns was conserved')
-    except AssertionError:
-        logging.error('The number of columns was not conserverd')
+    total_rows = train_data.shape[0] + test_data.shape[0] 
+    total_cols = train_data.shape[1] + 1
+
+    assert total_rows == load_clean_data.shape[0]
+    assert total_cols == load_clean_data.shape[1]
 
 
 def test_slice_file():
