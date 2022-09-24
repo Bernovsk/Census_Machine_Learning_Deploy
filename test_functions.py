@@ -3,12 +3,12 @@ from inference_ import run_inference
 from ml.data import train_test_data
 
 def test_preprocessing_data(load_clean_data):
-    train_data, test_data = train_test_data(load_clean_data)
+    clean_data = load_clean_data
+    train_data, test_data = train_test_data(clean_data)
     total_rows = train_data.shape[0] + test_data.shape[0] 
-    total_cols = train_data.shape[1] + 1
 
-    assert total_rows == load_clean_data.shape[0]
-    assert total_cols == load_clean_data.shape[1]
+    assert total_rows == clean_data.shape[0]
+    assert train_data.shape[1] == clean_data.shape[1]
 
 
 def test_slice_file():
