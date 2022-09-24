@@ -36,7 +36,7 @@ def test_preprocessing_data(load_clean_data):
 
 
 def test_slice_file():
-    assert 'sliced_output.txt' in os.listdir('./ml/model/')
+    assert 'sliced_output.txt' in os.listdir('ml/model/')
 
 
 def test_inference(load_inference_data):
