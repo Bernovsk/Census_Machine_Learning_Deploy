@@ -29,7 +29,7 @@ def main(data_path):
 
     check_slices(
         model=model,
-        test_data=test_data,
+        ingested_data=test_data,
         encoder_model=encoder_model,
         lb_model=lb_model)
 

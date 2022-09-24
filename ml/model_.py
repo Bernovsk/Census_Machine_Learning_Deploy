@@ -161,17 +161,19 @@ def slice_performance(model,
     return valued_metrics
 
 
-def check_slices(model,test_data, encoder_model, lb_model):
+def check_slices(model, ingested_data, encoder_model, lb_model):
     """
-    Run the slice_performance function over each categorical column checking every unique value
-    INput
+    Run the slice_performance function over each
+    categorical column checking every unique value
+    Input:
+    ------
 
     """
     with open("./ml/model/sliced_output.txt", 'w', encoding='UTF-8') as output_file:
         for category in PROCESSED_CAT_FEATURES:
-            for value in test_data[category].unique().tolist():
-
-                sliced_frame = test_data.loc[test_data[category] == value].copy()
+            unique_values = ingested_data[category].unique().tolist()
+            for value in unique_values:
+                sliced_frame = ingested_data.loc[ingested_data[category] == value].copy()
                 sliced_frame.drop_duplicates(inplace = True)
 
                 test_data, true_label, _, _ = process_data(X = sliced_frame,

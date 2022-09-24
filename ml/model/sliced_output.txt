@@ -1,0 +1,577 @@
+
+                Column: workclass
+                Value Name: Private
+                Precision: 0.75 - Recall 0.62 - Fbeta 0.677
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: workclass
+                Value Name: Self_emp_inc
+                Precision: 0.77 - Recall 0.76 - Fbeta 0.768
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: workclass
+                Value Name: Self_emp_not_inc
+                Precision: 0.81 - Recall 0.55 - Fbeta 0.658
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: workclass
+                Value Name: Local_gov
+                Precision: 0.78 - Recall 0.67 - Fbeta 0.719
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: workclass
+                Value Name: State_gov
+                Precision: 0.79 - Recall 0.7 - Fbeta 0.738
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: workclass
+                Value Name: Federal_gov
+                Precision: 0.73 - Recall 0.72 - Fbeta 0.727
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: workclass
+                Value Name: Without_pay
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: HS_grad
+                Precision: 0.62 - Recall 0.43 - Fbeta 0.504
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Assoc_voc
+                Precision: 0.62 - Recall 0.53 - Fbeta 0.574
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Bachelors
+                Precision: 0.78 - Recall 0.75 - Fbeta 0.764
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Prof_school
+                Precision: 0.9 - Recall 0.93 - Fbeta 0.915
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Some_college
+                Precision: 0.74 - Recall 0.53 - Fbeta 0.614
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Masters
+                Precision: 0.85 - Recall 0.89 - Fbeta 0.866
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 11th
+                Precision: 1.0 - Recall 0.38 - Fbeta 0.545
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 5th_6th
+                Precision: 1.0 - Recall 0.33 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Assoc_acdm
+                Precision: 0.71 - Recall 0.54 - Fbeta 0.611
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Doctorate
+                Precision: 0.88 - Recall 0.83 - Fbeta 0.851
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 10th
+                Precision: 0.8 - Recall 0.36 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 7th_8th
+                Precision: 1.0 - Recall 0.33 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 9th
+                Precision: 1.0 - Recall 0.67 - Fbeta 0.8
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 12th
+                Precision: 0.67 - Recall 0.25 - Fbeta 0.364
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: Preschool
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: education
+                Value Name: 1st_4th
+                Precision: 1.0 - Recall 0.33 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Never_married
+                Precision: 0.87 - Recall 0.39 - Fbeta 0.538
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Married_civ_spouse
+                Precision: 0.75 - Recall 0.68 - Fbeta 0.716
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Divorced
+                Precision: 0.82 - Recall 0.37 - Fbeta 0.514
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Married_spouse_absent
+                Precision: 1.0 - Recall 0.5 - Fbeta 0.667
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Separated
+                Precision: 0.5 - Recall 0.25 - Fbeta 0.333
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Widowed
+                Precision: 1.0 - Recall 0.29 - Fbeta 0.444
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: marital_status
+                Value Name: Married_AF_spouse
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Sales
+                Precision: 0.72 - Recall 0.63 - Fbeta 0.676
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Farming_fishing
+                Precision: 0.71 - Recall 0.48 - Fbeta 0.571
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Handlers_cleaners
+                Precision: 0.83 - Recall 0.45 - Fbeta 0.588
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Prof_specialty
+                Precision: 0.82 - Recall 0.81 - Fbeta 0.812
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Adm_clerical
+                Precision: 0.64 - Recall 0.53 - Fbeta 0.58
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Exec_managerial
+                Precision: 0.8 - Recall 0.76 - Fbeta 0.776
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Other_service
+                Precision: 0.75 - Recall 0.14 - Fbeta 0.24
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Craft_repair
+                Precision: 0.64 - Recall 0.43 - Fbeta 0.516
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Transport_moving
+                Precision: 0.71 - Recall 0.39 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Machine_op_inspct
+                Precision: 0.69 - Recall 0.33 - Fbeta 0.444
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Protective_serv
+                Precision: 0.71 - Recall 0.62 - Fbeta 0.658
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Tech_support
+                Precision: 0.79 - Recall 0.6 - Fbeta 0.683
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Priv_house_serv
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: occupation
+                Value Name: Armed_Forces
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: relationship
+                Value Name: Own_child
+                Precision: 1.0 - Recall 0.43 - Fbeta 0.6
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: relationship
+                Value Name: Husband
+                Precision: 0.75 - Recall 0.68 - Fbeta 0.713
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: relationship
+                Value Name: Wife
+                Precision: 0.73 - Recall 0.72 - Fbeta 0.726
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: relationship
+                Value Name: Not_in_family
+                Precision: 0.84 - Recall 0.4 - Fbeta 0.539
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: relationship
+                Value Name: Unmarried
+                Precision: 0.82 - Recall 0.26 - Fbeta 0.391
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: relationship
+                Value Name: Other_relative
+                Precision: 1.0 - Recall 0.43 - Fbeta 0.6
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: race
+                Value Name: White
+                Precision: 0.76 - Recall 0.64 - Fbeta 0.695
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: race
+                Value Name: Black
+                Precision: 0.82 - Recall 0.59 - Fbeta 0.687
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: race
+                Value Name: Asian_Pac_Islander
+                Precision: 0.7 - Recall 0.61 - Fbeta 0.651
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: race
+                Value Name: Other
+                Precision: 0.8 - Recall 0.8 - Fbeta 0.8
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: race
+                Value Name: Amer_Indian_Eskimo
+                Precision: 0.5 - Recall 0.5 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: sex
+                Value Name: Female
+                Precision: 0.75 - Recall 0.57 - Fbeta 0.651
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: sex
+                Value Name: Male
+                Precision: 0.76 - Recall 0.65 - Fbeta 0.699
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: United_States
+                Precision: 0.76 - Recall 0.64 - Fbeta 0.696
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Philippines
+                Precision: 0.86 - Recall 0.6 - Fbeta 0.706
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Puerto_Rico
+                Precision: 0.6 - Recall 1.0 - Fbeta 0.75
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Haiti
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Columbia
+                Precision: 0.0 - Recall 1.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Canada
+                Precision: 0.88 - Recall 0.64 - Fbeta 0.737
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Mexico
+                Precision: 0.67 - Recall 0.25 - Fbeta 0.364
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Germany
+                Precision: 0.55 - Recall 0.67 - Fbeta 0.6
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Jamaica
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Iran
+                Precision: 0.5 - Recall 1.0 - Fbeta 0.667
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Cuba
+                Precision: 1.0 - Recall 0.5 - Fbeta 0.667
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Laos
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Poland
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: England
+                Precision: 0.57 - Recall 0.8 - Fbeta 0.667
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Dominican_Republic
+                Precision: 0.0 - Recall 1.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Outlying_US(Guam_USVI_etc)
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: South
+                Precision: 0.8 - Recall 0.8 - Fbeta 0.8
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Greece
+                Precision: 0.33 - Recall 1.0 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: China
+                Precision: 0.4 - Recall 0.67 - Fbeta 0.5
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Peru
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Guatemala
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Italy
+                Precision: 0.67 - Recall 1.0 - Fbeta 0.8
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Ecuador
+                Precision: 0.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Taiwan
+                Precision: 0.67 - Recall 1.0 - Fbeta 0.8
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: El_Salvador
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Japan
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Hong
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Honduras
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Cambodia
+                Precision: 0.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Portugal
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Trinadad&Tobago
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Hungary
+                Precision: 0.0 - Recall 1.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Nicaragua
+                Precision: 1.0 - Recall 0.0 - Fbeta 0.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: India
+                Precision: 0.86 - Recall 0.86 - Fbeta 0.857
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Thailand
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: France
+                Precision: 0.75 - Recall 1.0 - Fbeta 0.857
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Ireland
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Holand_Netherlands
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                
+                Column: native_country
+                Value Name: Vietnam
+                Precision: 1.0 - Recall 1.0 - Fbeta 1.0
+                -*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-
+
+                

@@ -1,7 +1,6 @@
 """
 Module for preprocessing and processing
 the data for the ingestion of the model
-
 Author: Bernarod C.
 Date: 2022/09/22
 """
@@ -20,7 +19,6 @@ logger = logging.getLogger()
 def load_data(path: str) -> pd.DataFrame:
     """
     Load the data from a data path
-
     Input:
     ------
         path:(str)
@@ -40,7 +38,6 @@ def load_data(path: str) -> pd.DataFrame:
 def remove_dash(frame: pd.DataFrame, col_name: str) -> pd.DataFrame:
     """
     Remove the '-' char from any text column
-
     Input:
         frame: (pd.DataFrame)
         col_name: (str) Column that will replace the char value
@@ -56,7 +53,6 @@ def remove_dash(frame: pd.DataFrame, col_name: str) -> pd.DataFrame:
 def clean_spaces(frame: pd.DataFrame, col_name: str) -> pd.DataFrame:
     """
     Remove empty spaces from strings
-
     Input:
         frame: (pd.DataFrame)
         col_name: (str) Column that will remove the empty space
@@ -72,7 +68,6 @@ def clean_spaces(frame: pd.DataFrame, col_name: str) -> pd.DataFrame:
 def remove_unwanted(frame: pd.DataFrame, char: str = '?'):
     """
     Remove invalid values
-
     Input:
         frame: (pd.DataFrame)
         char: (str)
@@ -97,7 +92,6 @@ def data_read(data: Union[str, pd.DataFrame]):
     Check if the data is an pd.DataFrame or an string
     in case of be a string it read the file correspondent
     file path
-
     Input:
     ------
         data: (str or pd.DataFrame)
@@ -118,7 +112,6 @@ def data_preprocessing(data: Union[str, None, pd.DataFrame] = None):
     """
     Unify the basic preprocessing function,
     and returns a preprocessed pandas DataFrame
-
     Input:
     ------
         data: (str or pd.DataFrame)
@@ -146,7 +139,6 @@ def train_test_data(clean_frame: pd.DataFrame,
                     save: Union[bool, None] = False):
     """
     Function that split the data into 0.8 and 0.2 and saves if save = True
-
     Input:
     ------
         clean_frame:(pd.DataFrame)
@@ -243,3 +235,4 @@ def process_data(
 
     X = np.concatenate([X_continuous, X_categorical], axis=1)
     return X, y, encoder, lb
+    
