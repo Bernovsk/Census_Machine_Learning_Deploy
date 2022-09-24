@@ -3,19 +3,6 @@ import os
 from inference_ import run_inference
 from ml.data import train_test_data
 
-logging.basicConfig(
-    filename='./logs/test_train_data.log',
-    level=logging.INFO,
-    filemode='w',
-    format='%(name)s - %(levelname)s - %(message)s')
-
-logging.basicConfig(
-    filename='./logs/test_train_data.log',
-    level=logging.INFO,
-    filemode='w',
-    format='%(name)s - %(levelname)s - %(message)s')
-
-
 def test_preprocessing_data(load_clean_data):
     train_data, test_data = train_test_data(load_clean_data)
     total_rows = train_data.shape[0] + test_data.shape[0] + 500
@@ -32,7 +19,6 @@ def test_preprocessing_data(load_clean_data):
         logging.error('The number of columns was conserved')
     except AssertionError:
         logging.error('The number of columns was not conserverd')
-
 
 
 def test_slice_file():
