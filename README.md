@@ -1,9 +1,9 @@
 # Census Salary Prediction ML Model on Heroku with FastAPI
 
 
-Author: Bernardo Carvalho
-Date: September 2022
-Link for the public github repository and heroku api docs
+Author: Bernardo Carvalho <br>
+Date: September 2022<br>
+Link for the public github repository and heroku api docs<br>
 
 
 
